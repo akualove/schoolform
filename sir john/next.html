@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>Form Details</h1>
+    <script>
+      function getParams() {
+        var idx = document.URL.indexOf("?");
+        var params = new Array();
+        if (idx != -1) {
+          var pairs = document.URL.substring(
+            idx + 1,
+            document.URL.length
+          ).split("&");
+          for (var i = 0; i < pairs.length; i++) {
+            nameVal = pairs[i].split("=");
+            params[nameVal[0]] = nameVal[1];
+          }
+        }
+        return params;
+      }
+      params = getParams();
+      firstname = unescape(params["firstname"]);
+      lastname = unescape(params["lastname"]);
+      bdate = unescape(params["bdate"]);
+      gender = unescape(params["gender"]);
+      email = unescape(params["email"]);
+      add1 = unescape(params["add1"]);
+      add2 = unescape(params["add2"]);
+      city = unescape(params["city"]);
+      state = unescape(params["state"]);
+      zip = unescape(params["zip"]);
+      country = unescape(params["country"]);
+
+      document.write("Firstname = " + firstname + "<br>");
+      document.write("Lastname = " + lastname + "<br>");
+      document.write("Birthdate = " + bdate + "<br>");
+      document.write("Gender = " + gender + "<br>");
+      document.write("Student E-mail = " + email + "<br>");
+      document.write("Address 1 = " + add1 + "<br>");
+      document.write("Address 2 = " + add2 + "<br>");
+      document.write("City = " + city + "<br>");
+      document.write("State/Province = " + state + "<br>");
+      document.write("Postal/Zipcode = " + zip + "<br>");
+      document.write("Country = " + country + "<br>");
+    </script>
+  </body>
+</html>
